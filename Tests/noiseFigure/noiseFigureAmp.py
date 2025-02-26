@@ -6,7 +6,7 @@ import sympy as sp
 
 fileName = 'ExNoiseFigureAmp'
 
-cir = sl.makeCircuit(sl.ini.cir_path + 'ExNoiseFigureAmp.asc', imgWidth=600)
+cir = sl.makeCircuit(sl.ini.cir_path + 'ExNoiseFigureAmp.cir') #image update isn't supported with ltspice
 
 # Define the frequency range
 f_min = sp.Symbol('f_min')
