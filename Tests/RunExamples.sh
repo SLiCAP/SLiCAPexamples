@@ -12,6 +12,7 @@ cp Template.rst ExampleCirs.rst
 export MPLBACKEND=svg #For plotting with Matplotlib on the 'SVG' backend
 for key in "${!test_cirs[@]}"; do
     cd $key
+    echo "Now running ${key}"
     python ${test_cirs[$key]}
     mkdir ../allhtml/$key
     mv  -v html/* ../allhtml/$key
