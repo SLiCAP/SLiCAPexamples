@@ -1,6 +1,6 @@
 # SLiCAP test files and examples
 
-This repository comprises test files and examples for SLiCAP. 
+This repository comprises test files and examples for SLiCAP.
 
-- Test files will be executed each time SLiCAP is updated.
-- Examples can be downloaded by SLiCAP users to help tyhem understanding and applying SLiCAP.
+- Examples help users to understand and apply SLiCAP
+- Test files will be executed each time SLiCAP is updated and are not intented as worked-out examples
