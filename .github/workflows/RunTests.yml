@@ -49,12 +49,10 @@ jobs:
         run: |
           wget https://ltspice.analog.com/software/LTspice64.exe
           wine LTspice64.exe
-      - name: install python packages, SLiCAP dependencies
+      - name: install SLiCAP
         run: |
           python -m pip install --upgrade pip
-          pip install SLiCAP
-          python -m pip freeze > requirements.txt
-          python -m pip install -r requirements.txt
+          python -m pip install SLiCAP
       - name: Checkout Examples repository
         uses: actions/checkout@v3
         with:
