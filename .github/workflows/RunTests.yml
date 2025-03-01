@@ -57,6 +57,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: SLiCAP/SLiCAPexamples
+      - name: install SLiCAP dependencies
+        run: |
+          python -m pip install -r requirements.txt
       - name: run example projects
         run: |
           cd ./Tests
