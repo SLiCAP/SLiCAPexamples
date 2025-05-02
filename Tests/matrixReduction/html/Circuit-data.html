@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="Language" content="English"/>
+<title>"Circuit data"</title><link rel="stylesheet" href="css/slicap.css">
+<script>MathJax = {tex:{tags: 'ams', inlineMath:[['$','$'],]}, svg:{fontCache:'global'}};</script>
+<script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head><body><div id="top"><h1>Circuit data</h1></div>
+<h2>Schematic diagram of reduceCircuit.kicad_sch</h2>
+<figure><a id="fig_reduceCircuit.kicad_sch"></a><img src="img/reduceCircuit.svg" alt="Circuit diagram of reduceCircuit." style="width:500px">
+<figcaption>Figure: reduceCircuit.svg<br>Circuit diagram of reduceCircuit.</figcaption>
+</figure>
+<h2><a id="netlist_reduceCircuit"></a>Netlist: reduceCircuit.cir</h2>
+<pre>reduceCircuit
+C1 out 1 C value={C_i} vinit=0
+I1 1 2 I value=? noise=0 dc=0 dcvar=0
+K1 L1 L2 K value={k_c}
+L1 5 3 L value={L_a} iinit=0
+L2 7 0 L value={L_b} iinit=0
+N1 5 0 4 3 N
+N2 out 0 2 1 N
+R1 3 0 R value={R} noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
+R2 1 0 R value={R_i} noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
+V1 6 0 V value=0 noise=0 dc=0 dcvar=0
+V2 6 4 V value=0 noise=0 dc=0 dcvar=0
+V3 7 2 V value=0 noise=0 dc=0 dcvar=0
+.end</pre>
+<a id="elementdata_reduceCircuit"></a><table>Expanded netlist of reduceCircuit.cir.
+<tr><th class="left">RefDes</th><th class="left">Nodes</th><th class="left">Refs</th><th class="left">Model</th><th class="left">Param</th><th class="left">Symbolic</th><th class="left">Numeric</th></tr>
+</table>
+<a id="params_reduceCircuit"></a><table>Parameter definitions of reduceCircuit.cir.
+<tr><th class="left">Name</th><th class="left">Symbolic</th><th class="left">Numeric</th></tr>
+</table>
+<!-- INSERT -->
+<div id="footnote">
+<p>Go to <a href="index.html">index</a></p>
+<p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 3.3.2 &copy 2009-2025 SLiCAP development team</p>
+<p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
+<p>Last project update: 2025-03-23 10:52:10</p>
+</div></body></html>

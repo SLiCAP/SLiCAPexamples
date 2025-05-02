@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<meta name="Language" content="English"/>
+<title>"Circuit data"</title><link rel="stylesheet" href="css/slicap.css">
+<script>MathJax = {tex:{tags: 'ams', inlineMath:[['$','$'],]}, svg:{fontCache:'global'}};</script>
+<script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head><body><div id="top"><h1>Circuit data</h1></div>
+<h2>Schematic diagram of reduceCircuit.kicad_sch</h2>
+<figure><a id="fig_reduceCircuit.kicad_sch"></a><img src="img/reduceCircuit.svg" alt="Circuit diagram of reduceCircuit." style="width:400px">
+<figcaption>Figure: reduceCircuit.svg<br>Circuit diagram of reduceCircuit.</figcaption>
+</figure>
+<h2><a id="netlist_reduceCircuit"></a>Netlist: reduceCircuit.cir</h2>
+<pre>reduceCircuit
+N1 o 0 2 3 N
+R1 3 0 R value={R_b} noisetemp={T} noiseflow=0 dcvar=0 dcvarlot=0
+R2 o 3 R value={R_a} noisetemp={T} noiseflow=0 dcvar=0 dcvarlot=0
+V1 1 0 V value=0 noise={S_v1} dc=0 dcvar=0
+V2 1 2 V value=0 noise={S_v2} dc=0 dcvar=0
+.end</pre>
+<a id="elementdata_reduceCircuit"></a><table>Expanded netlist of reduceCircuit.cir.
+<tr><th class="left">RefDes</th><th class="left">Nodes</th><th class="left">Refs</th><th class="left">Model</th><th class="left">Param</th><th class="left">Symbolic</th><th class="left">Numeric</th></tr>
+<tr><td class="left">N1</td><td class = "left">o 0 2 3 </td><td class = "left"></td><td class = "left">N</td>
+<td></td><td></td><td></td><tr><tr><td class="left">R1</td><td class = "left">3 0 </td><td class = "left"></td><td class = "left">R</td>
+<td class="left">value</td><td class="left">$R_{b}$</td><td class="left">$R_{b}$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">noisetemp</td><td class="left">$T$</td><td class="left">$300$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">noiseflow</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dcvar</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dcvarlot</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td class="left">R2</td><td class = "left">o 3 </td><td class = "left"></td><td class = "left">R</td>
+<td class="left">value</td><td class="left">$R_{a}$</td><td class="left">$R_{a}$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">noisetemp</td><td class="left">$T$</td><td class="left">$300$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">noiseflow</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dcvar</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dcvarlot</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td class="left">V1</td><td class = "left">1 0 </td><td class = "left"></td><td class = "left">V</td>
+<td class="left">value</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">noise</td><td class="left">$S_{v1}$</td><td class="left">$S_{v1}$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dc</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dcvar</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td class="left">V2</td><td class = "left">1 2 </td><td class = "left"></td><td class = "left">V</td>
+<td class="left">value</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">noise</td><td class="left">$S_{v2}$</td><td class="left">$S_{v2}$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dc</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+<tr><td></td><td></td><td></td><td></td><td class="left">dcvar</td><td class="left">$0$</td><td class="left">$0$</td></tr>
+</table>
+<a id="params_reduceCircuit"></a><table>Parameter definitions of reduceCircuit.cir.
+<tr><th class="left">Name</th><th class="left">Symbolic</th><th class="left">Numeric</th></tr>
+<tr><td class="left">$T$</td><td class="left">$300$</td><td class="left">$300$</td></tr>
+</table>
+<table><caption>Table: Parameters without definition in 'reduceCircuit.</caption>
+
+<tr><th class="left">Name</th></tr>
+<tr><td class="left">$S_{v2}$</td></tr>
+<tr><td class="left">$R_{b}$</td></tr>
+<tr><td class="left">$R_{a}$</td></tr>
+<tr><td class="left">$S_{v1}$</td></tr>
+</table>
+<h3>Matrix equation:</h3>
+\begin{equation}
+\left[\begin{matrix}0\\0\\0\\0\\0\\0\\0\end{matrix}\right]=\left[\begin{matrix}0 & 0 & 0 & 0 & 1 & -1 & 0\\0 & 0 & 0 & 1 & 0 & 0 & 0\\0 & 0 & 0 & 1 & -1 & 0 & 0\\0 & 1 & 1 & 0 & 0 & 0 & 0\\0 & 0 & -1 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0 & \frac{1}{R_{b}} + \frac{1}{R_{a}} & - \frac{1}{R_{a}}\\1 & 0 & 0 & 0 & 0 & - \frac{1}{R_{a}} & \frac{1}{R_{a}}\end{matrix}\right]\cdot\left[\begin{matrix}Io_{N1}\\I_{V1}\\I_{V2}\\V_{1}\\V_{2}\\V_{3}\\V_{o}\end{matrix}\right]
+\end{equation}
+<h3>Matrix equation:</h3>
+\begin{equation}
+\left[\begin{matrix}0\\0\\0\end{matrix}\right]=\left[\begin{matrix}0 & -1 & 0\\0 & \frac{1}{R_{b}} + \frac{1}{R_{a}} & - \frac{1}{R_{a}}\\1 & - \frac{1}{R_{a}} & \frac{1}{R_{a}}\end{matrix}\right]\cdot\left[\begin{matrix}Io_{N1}\\V_{3}\\V_{o}\end{matrix}\right]
+\end{equation}
+<!-- INSERT -->
+<div id="footnote">
+<p>Go to <a href="reduceCircuit_index.html">reduceCircuit_index</a></p>
+<p>SLiCAP: Symbolic Linear Circuit Analysis Program, Version 3.3.2 &copy 2009-2025 SLiCAP development team</p>
+<p>For documentation, examples, support, updates and courses please visit: <a href="https://analog-electronics.tudelft.nl">analog-electronics.tudelft.nl</a></p>
+<p>Last project update: 2025-03-23 15:01:50</p>
+</div></body></html>

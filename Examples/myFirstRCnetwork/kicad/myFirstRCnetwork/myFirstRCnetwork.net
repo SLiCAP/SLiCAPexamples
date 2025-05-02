@@ -1,8 +1,8 @@
 (export (version "E")
   (design
-    (source "/home/anton/SLiCAP/examples/myFirstRCnetwork/kicad/myFirstRCnetwork/myFirstRCnetwork.kicad_sch")
-    (date "2025-01-26T12:54:46+0100")
-    (tool "Eeschema 8.0.7-8.0.7-0~ubuntu24.04.1")
+    (source "Z:\\SLiCAP\\SLiCAP_github\\SLiCAPexamples\\Examples\\myFirstRCnetwork\\kicad\\myFirstRCnetwork\\myFirstRCnetwork.kicad_sch")
+    (date "2025-04-05T17:47:24+0200")
+    (tool "Eeschema 9.0.0")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
         (title "myFirstRCnetwork")
@@ -165,16 +165,14 @@
       (pins
         (pin (num "1") (name "p") (type "power_out"))
         (pin (num "2") (name "n") (type "power_out")))))
-  (libraries
-    (library (logical "SLiCAP")
-      (uri "/home/anton/SLiCAP/kicad/SLiCAP.kicad_sym")))
+  (libraries)
   (nets
-    (net (code "1") (name "/in")
+    (net (code "1") (name "/in") (class "Default")
       (node (ref "R1") (pin "2") (pinfunction "2") (pintype "passive"))
       (node (ref "V1") (pin "1") (pinfunction "p") (pintype "power_out")))
-    (net (code "2") (name "/out")
+    (net (code "2") (name "/out") (class "Default")
       (node (ref "C1") (pin "2") (pinfunction "2") (pintype "passive"))
       (node (ref "R1") (pin "1") (pinfunction "1") (pintype "passive")))
-    (net (code "3") (name "0")
+    (net (code "3") (name "0") (class "Default")
       (node (ref "C1") (pin "1") (pinfunction "1") (pintype "passive"))
       (node (ref "V1") (pin "2") (pinfunction "n") (pintype "power_out")))))

@@ -1,0 +1,7 @@
+reduceCircuit
+N1 o 0 2 3 N
+R1 3 0 R value={R_b} noisetemp={T} noiseflow=0 dcvar=0 dcvarlot=0
+R2 o 3 R value={R_a} noisetemp={T} noiseflow=0 dcvar=0 dcvarlot=0
+V1 1 0 V value=0 noise={S_v1} dc=0 dcvar=0
+V2 1 2 V value=0 noise={S_v2} dc=0 dcvar=0
+.end

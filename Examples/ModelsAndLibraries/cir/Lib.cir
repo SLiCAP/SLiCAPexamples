@@ -1,0 +1,11 @@
+Lib
+.lib myLib.lib
+.source V1
+.detector V_out
+.lgref E_O1
+.param R_s=1k C_ell=100p
+C1 out 0 C value={C_ell} vinit=0
+O1 1 out out 0 myOpAmp
+R1 2 1 R value={R_s} noisetemp=0 noiseflow=0 dcvar=0 dcvarlot=0
+V1 2 0 V value=0 noise=0 dc=0 dcvar=0
+.end

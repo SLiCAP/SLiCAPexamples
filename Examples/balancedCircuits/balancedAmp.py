@@ -6,6 +6,7 @@ Created on Wed Feb 22 17:14:45 2023
 @author: anton
 """
 import SLiCAP as sl
+sl.initProject("balanced")
 
 cir = sl.makeCircuit('balancedAmp.cir')
 
