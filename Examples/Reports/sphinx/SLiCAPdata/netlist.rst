@@ -1,2 +1,2 @@
-.. literalinclude:: //home/anton/DATA/SLiCAP/SLiCAP_github/SLiCAPexamples/Examples/Reports/cir/myPassiveNetwork.cir
+.. literalinclude:: //home/anton/Desktop/CMOSEKV/SLiCAP/MOSdesign/cir/myPassiveNetwork.cir
     :linenos:
