@@ -1,0 +1,4 @@
+symbol, description, value, units, type
+f_min,Lower limit noise bandwidth,10,Hz,performance
+f_max,Upper limit noise bandwidth,10000000,Hz,performance
+v_n,RMS output noise over noise bandwidth,227911747327841/500000000000000000000,V,design

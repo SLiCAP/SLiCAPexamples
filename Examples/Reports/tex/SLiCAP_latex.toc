@@ -1,0 +1,24 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Project file locations}{3}{}%
+\contentsline {subsection}{\numberline {1.2}The preambule}{3}{}%
+\contentsline {section}{\numberline {2}SLiCAP creation of \LaTeX $\,$ output}{4}{}%
+\contentsline {subsection}{\numberline {2.1}SLiCAP functions}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}\texttt {makeCircuit()}}{4}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}plot(), plotSweep(), and plotPZ()}{5}{}%
+\contentsline {subsection}{\numberline {2.2}\LaTeX $\,$ formatter}{6}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}\texttt {coeffsTransfer(transferCoeffs, label="", caption="", \\ color="myyellow")}}{6}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}\texttt {dcvarContribs(resultObject, label="", caption="", \\ color="myyellow")}}{7}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}\texttt {dictTable(dct, head=None, label="", caption="", \\ color=myyellow")}}{7}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}\texttt {elementData(circuitObject, label="", caption="")}}{8}{}%
+\contentsline {subsubsection}{\numberline {2.2.5}\texttt {eqn(LHS, RHS, units="", label="", multiline=False)}}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.6}\texttt {eqnInline(LHS, RHS, units="")}}{9}{}%
+\contentsline {subsubsection}{\numberline {2.2.7}\texttt {expr(expr, units="")}}{10}{}%
+\contentsline {subsubsection}{\numberline {2.2.8}\texttt {file(fileName, lineRange=None, firstNumber=None, language=None, \\ style=None)}}{10}{}%
+\contentsline {subsubsection}{\numberline {2.2.9}\texttt {matrixEqn(Iv, M, Dv, label="")}}{11}{}%
+\contentsline {subsubsection}{\numberline {2.2.10}\texttt {netlist(netlistFile, lineRange=None, firstNumber=None)}}{11}{}%
+\contentsline {subsubsection}{\numberline {2.2.11}\texttt {noiseContribs(resultObject, label="", caption="", \\ color="myyellow")}}{12}{}%
+\contentsline {subsubsection}{\numberline {2.2.12}\texttt {params(circuitObject, label="", caption="", color="myyellow")}}{12}{}%
+\contentsline {subsubsection}{\numberline {2.2.13}\texttt {parDefs(circuitObject, label="", caption="", color="myyellow")}}{13}{}%
+\contentsline {subsubsection}{\numberline {2.2.14}\texttt {pz(resultObject, label="", append2caption="", \\ color="myyellow")}}{13}{}%
+\contentsline {subsubsection}{\numberline {2.2.15}\texttt {specs(specs, specType, label="", caption="", color="myyellow")}}{15}{}%
+\contentsline {subsubsection}{\numberline {2.2.16}\texttt {stepArray(stepVars, stepArray, label="", caption="", \\ color="myyellow")}}{16}{}%
