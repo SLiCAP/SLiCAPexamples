@@ -5,11 +5,11 @@ Created on Fri May  2 14:51:28 2025
 @author: anton
 """
 import SLiCAP as sl
-import sympy as sp
 import re
 import os
+
 sl.initProject("LATEX formatter") # Initialize the SLiCAP project
-ltx = sl.formatter("latex")       # Initialize a LaTeX formatter
+ltx = sl.LaTeXformatter()         # Initialize a LaTeX formatter
 
 # Create a circuit object
 cir = sl.makeCircuit("kicad/myPassiveNetwork/myPassiveNetwork.kicad_sch")
@@ -135,7 +135,7 @@ def sub2rm(textext):
     >>> textext = "\\frac{V_{out}}{V_{in}}"
     >>> print(sub2rm(textext))
     
-    \\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}
+    \\frac{V_{\\mathrm{out}}}{V_{\\mathrm{in}}}
     """
     pos = 0
     out = ''

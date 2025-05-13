@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 """
 Created on Fri May  2 14:51:28 2025
-
 @author: anton
 """
 import SLiCAP as sl
-
+import re
+import os
 sl.initProject("RST formatter") # Initialize the SLiCAP project
-rst = sl.formatter("rst")       # Initialize a ReStructuredText formatter
+rst = sl.RSTformatter()         # Initialize a ReStructuredText formatter
 
 # Create a circuit object
 cir = sl.makeCircuit("kicad/myPassiveNetwork/myPassiveNetwork.kicad_sch")
@@ -110,3 +110,42 @@ sl.plotSweep("dBmagStepped", "dB magnitude plot of the transfer", result, 0.01,
              100, 500, sweepScale="M", funcType="dBmag")
 rst.stepArray(step_dict["params"], step_dict["values"], 
               label="tab-stepdict", caption="Step array").save("stepdict")
+
+# Work-around to change subscripts to mathrm:
+
+def sub2rm(textext):
+    """
+    Converts LaTeX subscripts in italic fonts into mathrm fonts.
+    
+    :param textext: LaTeX snippet
+    :type textxt: str
+    
+    :return: Modified LaTeX snippet
+    :rtype: str
+    
+    :example:
+        
+    >>> textext = "\\frac{V_{out}}{V_{in}}"
+    >>> print(sub2rm(textext))
+    
+    \\frac{V_{\\mathrm{out}}}{V_{\\mathrm{in}}}
+    """
+    pos = 0
+    out = ''
+    pattern = re.compile(r'_{([a-zA-Z0-9]+)}')
+    for m in re.finditer(pattern, textext):
+        out += textext[pos:m.start()+1]+'{\\mathrm'+textext[m.start()+1: m.end()]+'}'
+        pos = m.end()
+    out += textext[pos:]
+    return out
+
+# Convert all the snippets
+
+files = os.listdir(sl.ini.rst_snippets)
+for fi in files:
+    f = open(sl.ini.rst_snippets + fi, "r")
+    textext = f.read()
+    f.close()
+    f = open(sl.ini.rst_snippets + fi, "w")
+    f.write(sub2rm(textext))
+    f.close()

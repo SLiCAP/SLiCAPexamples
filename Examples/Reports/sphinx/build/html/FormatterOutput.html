@@ -58,7 +58,7 @@
     <link rel="prev" title="SLiCAP output" href="SLiCAPoutput.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="English"/>
-    <meta name="docbuild:last-update" content="12/05/2025"/>
+    <meta name="docbuild:last-update" content="13/05/2025"/>
   </head>
   
   
@@ -346,11 +346,11 @@ document.write(`
 <span class="linenos"> 2</span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="linenos"> 4</span><span class="sd">Created on Fri May  2 14:51:28 2025</span>
-<span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="sd">@author: anton</span>
-<span class="linenos"> 7</span><span class="sd">&quot;&quot;&quot;</span>
-<span class="linenos"> 8</span><span class="kn">import</span> <span class="nn">SLiCAP</span> <span class="k">as</span> <span class="nn">sl</span>
-<span class="linenos"> 9</span>
+<span class="linenos"> 5</span><span class="sd">@author: anton</span>
+<span class="linenos"> 6</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 7</span><span class="kn">import</span> <span class="nn">SLiCAP</span> <span class="k">as</span> <span class="nn">sl</span>
+<span class="linenos"> 8</span><span class="kn">import</span> <span class="nn">re</span>
+<span class="linenos"> 9</span><span class="kn">import</span> <span class="nn">os</span>
 <span class="linenos">10</span><span class="n">sl</span><span class="o">.</span><span class="n">initProject</span><span class="p">(</span><span class="s2">&quot;RST formatter&quot;</span><span class="p">)</span> <span class="c1"># Initialize the SLiCAP project</span>
 <span class="linenos">11</span><span class="n">rst</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">formatter</span><span class="p">(</span><span class="s2">&quot;rst&quot;</span><span class="p">)</span>       <span class="c1"># Initialize a ReStructuredText formatter</span>
 </pre></div>
@@ -380,7 +380,7 @@ document.write(`
 <span class="linenos">65</span>                   <span class="s2">&quot;respectively&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;coeffs&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Let <span class="math notranslate nohighlight">\(H(s)=\)</span> <span class="math notranslate nohighlight">\(\frac{R_{\ell} \left(C_{b} L s^{2} + 1\right)}{\left(R_{\ell} + R_{s}\right) \left(\frac{C_{a} C_{b} L R_{\ell} R_{s} s^{3}}{R_{\ell} + R_{s}} + \frac{s^{2} \left(C_{a} L R_{\ell} + C_{b} L R_{\ell} + C_{b} L R_{s}\right)}{R_{\ell} + R_{s}} + \frac{s \left(C_{a} R_{\ell} R_{s} + L\right)}{R_{\ell} + R_{s}} + 1\right)}\)</span></p>
+<p>Let <span class="math notranslate nohighlight">\(H(s)=\)</span> <span class="math notranslate nohighlight">\(\frac{R_{\ell} \left(C_{\mathrm{b}} L s^{2} + 1\right)}{\left(R_{\ell} + R_{\mathrm{s}}\right) \left(\frac{C_{\mathrm{a}} C_{\mathrm{b}} L R_{\ell} R_{\mathrm{s}} s^{3}}{R_{\ell} + R_{\mathrm{s}}} + \frac{s^{2} \left(C_{\mathrm{a}} L R_{\ell} + C_{\mathrm{b}} L R_{\ell} + C_{\mathrm{b}} L R_{\mathrm{s}}\right)}{R_{\ell} + R_{\mathrm{s}}} + \frac{s \left(C_{\mathrm{a}} R_{\ell} R_{\mathrm{s}} + L\right)}{R_{\ell} + R_{\mathrm{s}}} + 1\right)}\)</span></p>
 <p><strong>RST code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">50</span>:numref:`tab-coeffs` shows the numerator and denominator coefficients of the Laplace variable :math:`s` of :math:`H(s)`.
 <span class="linenos">51</span>
@@ -397,26 +397,26 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(b_{0}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(b_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(b_{1}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(b_{\mathrm{1}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(b_{2}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(C_{b} L\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(b_{\mathrm{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(C_{\mathrm{b}} L\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a_{0}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_{1}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{C_{a} R_{\ell} R_{s} + L}{R_{\ell} + R_{s}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_{\mathrm{1}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{C_{\mathrm{a}} R_{\ell} R_{\mathrm{s}} + L}{R_{\ell} + R_{\mathrm{s}}}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a_{2}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{L \left(C_{a} R_{\ell} + C_{b} R_{\ell} + C_{b} R_{s}\right)}{R_{\ell} + R_{s}}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(a_{\mathrm{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{L \left(C_{\mathrm{a}} R_{\ell} + C_{\mathrm{b}} R_{\ell} + C_{\mathrm{b}} R_{\mathrm{s}}\right)}{R_{\ell} + R_{\mathrm{s}}}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_{3}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{C_{a} C_{b} L R_{\ell} R_{s}}{R_{\ell} + R_{s}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(a_{\mathrm{3}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{C_{\mathrm{a}} C_{\mathrm{b}} L R_{\ell} R_{\mathrm{s}}}{R_{\ell} + R_{\mathrm{s}}}\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -450,39 +450,39 @@ document.write(`
 </thead>
 <tbody>
 <tr class="row-even"><td><p>V1: Source value</p></td>
-<td><p><span class="math notranslate nohighlight">\(V_{DC}^{2} \sigma_{V}^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{\mathrm{DC}}^{2} \sigma_{\mathrm{V}}^{2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{V^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>V1: Source-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(V_{DC}^{2} \sigma_{V}^{2} \left(C_{b} L s^{2} + 1\right)^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{\mathrm{DC}}^{2} \sigma_{\mathrm{V}}^{2} \left(C_{\mathrm{b}} L s^{2} + 1\right)^{2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{V^2}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>V1: Detector-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{R_{\ell}^{2} V_{DC}^{2} \sigma_{V}^{2} \left(C_{b} L s^{2} + 1\right)^{2}}{\left(R_{\ell} + R_{s}\right)^{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{R_{\ell}^{2} V_{\mathrm{DC}}^{2} \sigma_{\mathrm{V}}^{2} \left(C_{\mathrm{b}} L s^{2} + 1\right)^{2}}{\left(R_{\ell} + R_{\mathrm{s}}\right)^{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{V^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>I_dcvar_R1: Source value</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{V_{DC}^{2} \sigma_{R1}^{2}}{\left(R_{\ell} + R_{s}\right)^{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{V_{\mathrm{DC}}^{2} \sigma_{\mathrm{R1}}^{2}}{\left(R_{\ell} + R_{\mathrm{s}}\right)^{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{A^2}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>I_dcvar_R1: Source-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{R_{s}^{2} V_{DC}^{2} \sigma_{R1}^{2}}{\left(R_{\ell} + R_{s}\right)^{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{R_{\mathrm{s}}^{2} V_{\mathrm{DC}}^{2} \sigma_{\mathrm{R1}}^{2}}{\left(R_{\ell} + R_{\mathrm{s}}\right)^{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{V^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>I_dcvar_R1: Detector-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{R_{\ell}^{2} R_{s}^{2} V_{DC}^{2} \sigma_{R1}^{2}}{\left(R_{\ell} + R_{s}\right)^{4}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{R_{\ell}^{2} R_{\mathrm{s}}^{2} V_{\mathrm{DC}}^{2} \sigma_{\mathrm{R1}}^{2}}{\left(R_{\ell} + R_{\mathrm{s}}\right)^{4}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{V^2}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>I_dcvar_R2: Source value</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{V_{DC}^{2} \sigma_{R2}^{2}}{\left(R_{\ell} + R_{s}\right)^{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{V_{\mathrm{DC}}^{2} \sigma_{\mathrm{R2}}^{2}}{\left(R_{\ell} + R_{\mathrm{s}}\right)^{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{A^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>I_dcvar_R2: Source-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{R_{s}^{2} V_{DC}^{2} \sigma_{R2}^{2}}{\left(R_{\ell} + R_{s}\right)^{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{R_{\mathrm{s}}^{2} V_{\mathrm{DC}}^{2} \sigma_{\mathrm{R2}}^{2}}{\left(R_{\ell} + R_{\mathrm{s}}\right)^{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{V^2}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>I_dcvar_R2: Detector-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{R_{\ell}^{2} R_{s}^{2} V_{DC}^{2} \sigma_{R2}^{2}}{\left(R_{\ell} + R_{s}\right)^{4}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{R_{\ell}^{2} R_{\mathrm{s}}^{2} V_{\mathrm{DC}}^{2} \sigma_{\mathrm{R2}}^{2}}{\left(R_{\ell} + R_{\mathrm{s}}\right)^{4}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{V^2}\)</span></p></td>
 </tr>
 </tbody>
@@ -517,7 +517,7 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R_{s}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R_{\mathrm{s}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(150\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(R_{\ell}\)</span></p></td>
@@ -526,25 +526,25 @@ document.write(`
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(L\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.0 \cdot 10^{-6}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(C_{a}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(C_{\mathrm{a}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-8}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(C_{b}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(C_{\mathrm{b}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-10}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_{v}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_{\mathrm{v}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(4.0 \cdot 10^{-18}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(V_{DC}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(V_{\mathrm{DC}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{V}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{V}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.05\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sigma_{R1}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{R1}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.02\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{R2}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{R2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.01\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(T\)</span></p></td>
@@ -589,7 +589,7 @@ document.write(`
 <td></td>
 <td><p>C</p></td>
 <td><p>value</p></td>
-<td><p><span class="math notranslate nohighlight">\(C_{a}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(C_{\mathrm{a}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-8}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td></td>
@@ -605,7 +605,7 @@ document.write(`
 <td></td>
 <td><p>C</p></td>
 <td><p>value</p></td>
-<td><p><span class="math notranslate nohighlight">\(C_{b}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(C_{\mathrm{b}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-10}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td></td>
@@ -637,7 +637,7 @@ document.write(`
 <td></td>
 <td><p>R</p></td>
 <td><p>value</p></td>
-<td><p><span class="math notranslate nohighlight">\(R_{s}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(R_{\mathrm{s}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(150\)</span></p></td>
 </tr>
 <tr class="row-odd"><td></td>
@@ -661,7 +661,7 @@ document.write(`
 <td></td>
 <td></td>
 <td><p>dcvar</p></td>
-<td><p><span class="math notranslate nohighlight">\(\sigma_{R1}^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{R1}}^{2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.0004\)</span></p></td>
 </tr>
 <tr class="row-even"><td></td>
@@ -701,7 +701,7 @@ document.write(`
 <td></td>
 <td></td>
 <td><p>dcvar</p></td>
-<td><p><span class="math notranslate nohighlight">\(\sigma_{R2}^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{R2}}^{2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.0001\)</span></p></td>
 </tr>
 <tr class="row-odd"><td></td>
@@ -725,7 +725,7 @@ document.write(`
 <td></td>
 <td></td>
 <td><p>noise</p></td>
-<td><p><span class="math notranslate nohighlight">\(S_{v}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(S_{\mathrm{v}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(4.0 \cdot 10^{-18}\)</span></p></td>
 </tr>
 <tr class="row-even"><td></td>
@@ -733,7 +733,7 @@ document.write(`
 <td></td>
 <td></td>
 <td><p>dc</p></td>
-<td><p><span class="math notranslate nohighlight">\(V_{DC}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{\mathrm{DC}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
 </tr>
 <tr class="row-odd"><td></td>
@@ -741,7 +741,7 @@ document.write(`
 <td></td>
 <td></td>
 <td><p>dcvar</p></td>
-<td><p><span class="math notranslate nohighlight">\(V_{DC}^{2} \sigma_{V}^{2}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(V_{\mathrm{DC}}^{2} \sigma_{\mathrm{V}}^{2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.0625\)</span></p></td>
 </tr>
 </tbody>
@@ -766,7 +766,7 @@ document.write(`
 <p><strong>This renders as:</strong></p>
 <p>The transfer function is shown in <a class="reference internal" href="#equation-eq-h1">(1)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-h1">
-<span class="eqno">(1)<a class="headerlink" href="#equation-eq-h1" title="Link to this equation">#</a></span>\[\frac{V_{out}}{V_{in}} = \frac{R_{\ell} \left(C_{b} L s^{2} + 1\right)}{\left(R_{\ell} + R_{s}\right) \left(\frac{C_{a} C_{b} L R_{\ell} R_{s} s^{3}}{R_{\ell} + R_{s}} + \frac{s^{2} \left(C_{a} L R_{\ell} + C_{b} L R_{\ell} + C_{b} L R_{s}\right)}{R_{\ell} + R_{s}} + \frac{s \left(C_{a} R_{\ell} R_{s} + L\right)}{R_{\ell} + R_{s}} + 1\right)}\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq-h1" title="Link to this equation">#</a></span>\[\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}} = \frac{R_{\ell} \left(C_{\mathrm{b}} L s^{2} + 1\right)}{\left(R_{\ell} + R_{\mathrm{s}}\right) \left(\frac{C_{\mathrm{a}} C_{\mathrm{b}} L R_{\ell} R_{\mathrm{s}} s^{3}}{R_{\ell} + R_{\mathrm{s}}} + \frac{s^{2} \left(C_{\mathrm{a}} L R_{\ell} + C_{\mathrm{b}} L R_{\ell} + C_{\mathrm{b}} L R_{\mathrm{s}}\right)}{R_{\ell} + R_{\mathrm{s}}} + \frac{s \left(C_{\mathrm{a}} R_{\ell} R_{\mathrm{s}} + L\right)}{R_{\ell} + R_{\mathrm{s}}} + 1\right)}\]</div>
 <p>If <cite>multiline=True</cite> SLiCAP breaks the equation in parts of a sum or a product.</p>
 </section>
 <section id="eqninline">
@@ -783,7 +783,7 @@ document.write(`
 </pre></div>
 </div>
 <p><strong>This renders as:</strong></p>
-<p>You can write <a class="reference internal" href="#equation-eq-h1">(1)</a> inline as: <span class="math notranslate nohighlight">\(\frac{V_{out}}{V_{in}}=\frac{R_{\ell} \left(C_{b} L s^{2} + 1\right)}{\left(R_{\ell} + R_{s}\right) \left(\frac{C_{a} C_{b} L R_{\ell} R_{s} s^{3}}{R_{\ell} + R_{s}} + \frac{s^{2} \left(C_{a} L R_{\ell} + C_{b} L R_{\ell} + C_{b} L R_{s}\right)}{R_{\ell} + R_{s}} + \frac{s \left(C_{a} R_{\ell} R_{s} + L\right)}{R_{\ell} + R_{s}} + 1\right)}\)</span></p>
+<p>You can write <a class="reference internal" href="#equation-eq-h1">(1)</a> inline as: <span class="math notranslate nohighlight">\(\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=\frac{R_{\ell} \left(C_{\mathrm{b}} L s^{2} + 1\right)}{\left(R_{\ell} + R_{\mathrm{s}}\right) \left(\frac{C_{\mathrm{a}} C_{\mathrm{b}} L R_{\ell} R_{\mathrm{s}} s^{3}}{R_{\ell} + R_{\mathrm{s}}} + \frac{s^{2} \left(C_{\mathrm{a}} L R_{\ell} + C_{\mathrm{b}} L R_{\ell} + C_{\mathrm{b}} L R_{\mathrm{s}}\right)}{R_{\ell} + R_{\mathrm{s}}} + \frac{s \left(C_{\mathrm{a}} R_{\ell} R_{\mathrm{s}} + L\right)}{R_{\ell} + R_{\mathrm{s}}} + 1\right)}\)</span></p>
 </section>
 <section id="expr">
 <h2>expr()<a class="headerlink" href="#expr" title="Link to this heading">#</a></h2>
@@ -799,7 +799,7 @@ document.write(`
 </pre></div>
 </div>
 <p><strong>This renders as:</strong></p>
-<p>The transfer can be written as: <span class="math notranslate nohighlight">\(\frac{R_{\ell} \left(C_{b} L s^{2} + 1\right)}{\left(R_{\ell} + R_{s}\right) \left(\frac{C_{a} C_{b} L R_{\ell} R_{s} s^{3}}{R_{\ell} + R_{s}} + \frac{s^{2} \left(C_{a} L R_{\ell} + C_{b} L R_{\ell} + C_{b} L R_{s}\right)}{R_{\ell} + R_{s}} + \frac{s \left(C_{a} R_{\ell} R_{s} + L\right)}{R_{\ell} + R_{s}} + 1\right)}\)</span></p>
+<p>The transfer can be written as: <span class="math notranslate nohighlight">\(\frac{R_{\ell} \left(C_{\mathrm{b}} L s^{2} + 1\right)}{\left(R_{\ell} + R_{\mathrm{s}}\right) \left(\frac{C_{\mathrm{a}} C_{\mathrm{b}} L R_{\ell} R_{\mathrm{s}} s^{3}}{R_{\ell} + R_{\mathrm{s}}} + \frac{s^{2} \left(C_{\mathrm{a}} L R_{\ell} + C_{\mathrm{b}} L R_{\ell} + C_{\mathrm{b}} L R_{\mathrm{s}}\right)}{R_{\ell} + R_{\mathrm{s}}} + \frac{s \left(C_{\mathrm{a}} R_{\ell} R_{\mathrm{s}} + L\right)}{R_{\ell} + R_{\mathrm{s}}} + 1\right)}\)</span></p>
 </section>
 <section id="file">
 <h2>file()<a class="headerlink" href="#file" title="Link to this heading">#</a></h2>
@@ -854,7 +854,7 @@ document.write(`
 <p><strong>This renders as:</strong></p>
 <p>The matrix equation of the network is given in <a class="reference internal" href="#equation-eq-matrices">(2)</a>.</p>
 <div class="math notranslate nohighlight" id="equation-eq-matrices">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq-matrices" title="Link to this equation">#</a></span>\[\begin{split}\left[\begin{matrix}0\\\frac{1}{s}\\0\\0\\0\end{matrix}\right]=\left[\begin{matrix}- L s &amp; 0 &amp; 1 &amp; 0 &amp; -1\\0 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\1 &amp; 0 &amp; C_{b} s + \frac{1}{R_{s}} &amp; - \frac{1}{R_{s}} &amp; - C_{b} s\\0 &amp; 1 &amp; - \frac{1}{R_{s}} &amp; \frac{1}{R_{s}} &amp; 0\\-1 &amp; 0 &amp; - C_{b} s &amp; 0 &amp; C_{a} s + C_{b} s + \frac{1}{R_{\ell}}\end{matrix}\right]\cdot \left[\begin{matrix}I_{L1}\\I_{V1}\\V_{1}\\V_{in}\\V_{out}\end{matrix}\right]\end{split}\]</div>
+<span class="eqno">(2)<a class="headerlink" href="#equation-eq-matrices" title="Link to this equation">#</a></span>\[\begin{split}\left[\begin{matrix}0\\\frac{1}{s}\\0\\0\\0\end{matrix}\right]=\left[\begin{matrix}- L s &amp; 0 &amp; 1 &amp; 0 &amp; -1\\0 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\1 &amp; 0 &amp; C_{\mathrm{b}} s + \frac{1}{R_{\mathrm{s}}} &amp; - \frac{1}{R_{\mathrm{s}}} &amp; - C_{\mathrm{b}} s\\0 &amp; 1 &amp; - \frac{1}{R_{\mathrm{s}}} &amp; \frac{1}{R_{\mathrm{s}}} &amp; 0\\-1 &amp; 0 &amp; - C_{\mathrm{b}} s &amp; 0 &amp; C_{\mathrm{a}} s + C_{\mathrm{b}} s + \frac{1}{R_{\ell}}\end{matrix}\right]\cdot \left[\begin{matrix}I_{\mathrm{L1}}\\I_{\mathrm{V1}}\\V_{\mathrm{1}}\\V_{\mathrm{in}}\\V_{\mathrm{out}}\end{matrix}\right]\end{split}\]</div>
 </section>
 <section id="netlist">
 <h2>netlist()<a class="headerlink" href="#netlist" title="Link to this heading">#</a></h2>
@@ -869,6 +869,20 @@ document.write(`
 </pre></div>
 </div>
 <p><strong>This renders as:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="s2">&quot;myPassiveNetwork&quot;</span>
+<span class="linenos"> 2</span><span class="o">.</span><span class="n">source</span> <span class="n">V1</span>
+<span class="linenos"> 3</span><span class="o">.</span><span class="n">detector</span> <span class="n">V_out</span>
+<span class="linenos"> 4</span><span class="o">.</span><span class="n">param</span> <span class="n">R_s</span><span class="o">=</span><span class="mi">150</span> <span class="n">R_ell</span><span class="o">=</span><span class="mi">50</span> <span class="n">L</span><span class="o">=</span><span class="mi">1</span><span class="n">u</span> <span class="n">C_a</span><span class="o">=</span><span class="mi">25</span><span class="n">n</span> <span class="n">C_b</span><span class="o">=</span><span class="mi">250</span><span class="n">p</span> <span class="n">S_v</span><span class="o">=</span><span class="mf">4e-18</span>
+<span class="linenos"> 5</span><span class="o">.</span><span class="n">param</span> <span class="n">V_DC</span> <span class="o">=</span> <span class="mi">5</span> <span class="n">sigma_V</span><span class="o">=</span><span class="mf">0.05</span> <span class="n">sigma_R1</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="n">sigma_R2</span><span class="o">=</span><span class="mf">0.01</span>
+<span class="linenos"> 6</span><span class="n">C1</span> <span class="mi">0</span> <span class="n">out</span> <span class="n">C</span> <span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="n">C_a</span><span class="p">}</span> <span class="n">vinit</span><span class="o">=</span><span class="mi">0</span>
+<span class="linenos"> 7</span><span class="n">C2</span> <span class="n">out</span> <span class="mi">1</span> <span class="n">C</span> <span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="n">C_b</span><span class="p">}</span> <span class="n">vinit</span><span class="o">=</span><span class="mi">0</span>
+<span class="linenos"> 8</span><span class="n">L1</span> <span class="mi">1</span> <span class="n">out</span> <span class="n">L</span> <span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="n">L</span><span class="p">}</span> <span class="n">iinit</span><span class="o">=</span><span class="mi">0</span>
+<span class="linenos"> 9</span><span class="n">R1</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">R</span> <span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="n">R_s</span><span class="p">}</span> <span class="n">noisetemp</span><span class="o">=</span><span class="p">{</span><span class="n">T</span><span class="p">}</span> <span class="n">noiseflow</span><span class="o">=</span><span class="mi">0</span> <span class="n">dcvar</span><span class="o">=</span><span class="p">{</span><span class="n">sigma_R1</span><span class="o">^</span><span class="mi">2</span><span class="p">}</span> <span class="n">dcvarlot</span><span class="o">=</span><span class="mi">0</span>
+<span class="linenos">10</span><span class="n">R2</span> <span class="n">out</span> <span class="mi">0</span> <span class="n">R</span> <span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="n">R_ell</span><span class="p">}</span> <span class="n">noisetemp</span><span class="o">=</span><span class="p">{</span><span class="n">T</span><span class="p">}</span> <span class="n">noiseflow</span><span class="o">=</span><span class="mi">0</span> <span class="n">dcvar</span><span class="o">=</span><span class="p">{</span><span class="n">sigma_R2</span><span class="o">^</span><span class="mi">2</span><span class="p">}</span> <span class="n">dcvarlot</span><span class="o">=</span><span class="mi">0</span>
+<span class="linenos">11</span><span class="n">V1</span> <span class="ow">in</span> <span class="mi">0</span> <span class="n">V</span> <span class="n">value</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="o">/</span><span class="n">s</span><span class="p">}</span> <span class="n">noise</span><span class="o">=</span><span class="p">{</span><span class="n">S_v</span><span class="p">}</span> <span class="n">dc</span><span class="o">=</span><span class="p">{</span><span class="n">V_DC</span><span class="p">}</span> <span class="n">dcvar</span><span class="o">=</span><span class="p">{(</span><span class="n">sigma_V</span><span class="o">*</span><span class="n">V_DC</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">}</span>
+<span class="linenos">12</span><span class="o">.</span><span class="n">end</span>
+</pre></div>
+</div>
 </section>
 <section id="noisecontribs">
 <h2>noiseContribs()<a class="headerlink" href="#noisecontribs" title="Link to this heading">#</a></h2>
@@ -977,7 +991,7 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R_{s}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(R_{\mathrm{s}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(150\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(150\)</span></p></td>
 </tr>
@@ -989,31 +1003,31 @@ document.write(`
 <td><p><span class="math notranslate nohighlight">\(1.0 \cdot 10^{-6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.0 \cdot 10^{-6}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(C_{a}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(C_{\mathrm{a}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-8}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-8}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(C_{b}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(C_{\mathrm{b}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-10}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.5 \cdot 10^{-10}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_{v}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(S_{\mathrm{v}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(4.0 \cdot 10^{-18}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(4.0 \cdot 10^{-18}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(V_{DC}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(V_{\mathrm{DC}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{V}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{V}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.05\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.05\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sigma_{R1}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{R1}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.02\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.02\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{R2}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\sigma_{\mathrm{R2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.01\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0.01\)</span></p></td>
 </tr>
@@ -1054,19 +1068,19 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{1}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{1}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.701 \cdot 10^{5}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.701 \cdot 10^{5}\)</span></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{2}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.37\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{3}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{3}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
@@ -1091,11 +1105,11 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{1}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(- \frac{0.5 \left(- \frac{1}{C_{b} L}\right)^{0.5}}{\pi}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{1}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(- \frac{0.5 \left(- \frac{1}{C_{\mathrm{b}} L}\right)^{0.5}}{\pi}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{2}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{0.5 \left(- \frac{1}{C_{b} L}\right)^{0.5}}{\pi}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{0.5 \left(- \frac{1}{C_{\mathrm{b}} L}\right)^{0.5}}{\pi}\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -1117,13 +1131,13 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{1}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{1}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\tilde{\infty}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{2}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
@@ -1151,31 +1165,31 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{1}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{1}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.701 \cdot 10^{5}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.701 \cdot 10^{5}\)</span></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{2}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.37\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{3}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{3}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.37\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{1}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{1}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\tilde{\infty}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{2}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
@@ -1220,12 +1234,12 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f_{min}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(f_{\mathrm{min}}\)</span></p></td>
 <td><p>Lower limit noise bandwidth</p></td>
 <td><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
 <td><p>Hz</p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f_{max}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(f_{\mathrm{max}}\)</span></p></td>
 <td><p>Upper limit noise bandwidth</p></td>
 <td><p><span class="math notranslate nohighlight">\(1.0 \cdot 10^{6}\)</span></p></td>
 <td><p>Hz</p></td>
@@ -1251,7 +1265,7 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(v_{n}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(v_{\mathrm{n}}\)</span></p></td>
 <td><p>RMS output noise over noise bandwidth</p></td>
 <td><p><span class="math notranslate nohighlight">\(1.0 \cdot 10^{6}\)</span></p></td>
 <td><p>Hz</p></td>
@@ -1294,7 +1308,7 @@ document.write(`
 <div class="pst-scrollable-table-container"><span id="tab-stepdict"></span><table class="table" id="id14">
 <caption><span class="caption-number">Table 13 </span><span class="caption-text">Step array</span><a class="headerlink" href="#id14" title="Link to this table">#</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(C_{b}\)</span></p></th>
+<tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(C_{mathrm{b}}\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(R_{ell}\)</span></p></th>
 </tr>
 </thead>
@@ -1399,7 +1413,7 @@ By Anton Montagne
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 12/05/2025.
+  Last updated on 13/05/2025.
   <br/>
 </p>
   </div>
