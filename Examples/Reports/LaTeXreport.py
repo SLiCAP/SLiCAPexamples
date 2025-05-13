@@ -135,7 +135,7 @@ def sub2rm(textext):
     >>> textext = "\\frac{V_{out}}{V_{in}}"
     >>> print(sub2rm(textext))
     
-    "\\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}
+    \\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}
     """
     pos = 0
     out = ''
