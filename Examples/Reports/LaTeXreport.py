@@ -119,33 +119,6 @@ ltx.stepArray(step_dict["params"], step_dict["values"], label="tab-stepdict",
               caption="Step array").save("stepdict")
 
 # Work-around to change subscripts to mathrm:
-
-def sub2rm(textext):
-    """
-    Converts LaTeX subscripts in italic fonts into mathrm fonts.
-    
-    :param textext: LaTeX snippet
-    :type textxt: str
-    
-    :return: Modified LaTeX snippet
-    :rtype: str
-    
-    :example:
-        
-    >>> textext = "\\frac{V_{out}}{V_{in}}"
-    >>> print(sub2rm(textext))
-    
-    \\frac{V_{\\mathrm{out}}}{V_{\\mathrm{in}}}
-    """
-    pos = 0
-    out = ''
-    pattern = re.compile(r'_{([a-zA-Z0-9]+)}')
-    for m in re.finditer(pattern, textext):
-        out += textext[pos:m.start()+1]+'{\\mathrm'+textext[m.start()+1: m.end()]+'}'
-        pos = m.end()
-    out += textext[pos:]
-    return out
-
 # Convert all the snippets
 
 files = os.listdir(sl.ini.tex_snippets)
@@ -154,5 +127,5 @@ for fi in files:
     textext = f.read()
     f.close()
     f = open(sl.ini.tex_snippets + fi, "w")
-    f.write(sub2rm(textext))
+    f.write(sl.sub2rm(textext))
     f.close()

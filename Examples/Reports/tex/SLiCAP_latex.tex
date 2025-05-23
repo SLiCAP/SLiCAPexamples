@@ -448,9 +448,9 @@ Some publishers require authors to provide material formatted in predefined styl
  \item If alternate row colors in tables are not desired, use {\texttt{color=white}} in formatter methods that create tables.
  \item If specific formatting of table captions is required, use {\texttt{caption=''}} and {\texttt{label=''}} in formatter methods that create tables. The table snippet will then be in the form of a {\texttt{$\backslash$begin\{tabular\} $\cdots$ $\backslash$end\{tabular\}}} fragment that can be imported
  in a {\texttt{$\backslash$begin\{table\} $\cdots$ $\backslash$end\{table\}}} environment to which a label and caption can be added.
- \item Subscripts in math (italic) can be converterd into {\texttt{$\backslash$mathrm\{\}}} subscripts with the function {\texttt{sub2rm(<latex snippet>)}}. This function is provided in {\texttt{LaTeXreport.py}}, and used for the creation of this document.
+ \item Subscripts in math (italic) can be converterd into {\texttt{$\backslash$mathrm\{\}}} subscripts with the function {\texttt{sub2rm(<latex snippet>)}}.
 
- \lstinputlisting[style=slicap, numbers=left, linerange={121-158}, firstnumber=121]{../LaTeXreport.py}
+ \lstinputlisting[style=slicap, numbers=left, linerange={121-131}, firstnumber=121]{../LaTeXreport.py}
 
  \item Another option is to manually edit one or more \LaTeX$\,$ snippets generated with SLiCAP. Care has to be taken not to override these edits when rerunning the SLiCAP script.
 

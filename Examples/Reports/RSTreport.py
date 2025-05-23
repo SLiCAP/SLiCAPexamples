@@ -8,8 +8,7 @@ import SLiCAP as sl
 import re
 import os
 sl.initProject("RST formatter") # Initialize the SLiCAP project
-rst = sl.RSTformatter()         # Initialize a ReStructuredText formatter
-
+rst=sl.RSTformatter()
 # Create a circuit object
 cir = sl.makeCircuit("kicad/myPassiveNetwork/myPassiveNetwork.kicad_sch")
 

@@ -1,2 +1,2 @@
-.. literalinclude:: //home/anton/DATA/SLiCAP/SLiCAP_python_tests/FilterDesign/cir/myPassiveNetwork.cir
+.. literalinclude:: //home/anton/DATA/SLiCAP/SLiCAP_github/SLiCAPexamples/Examples/Reports/cir/myPassiveNetwork.cir
     :linenos:
