@@ -6,7 +6,7 @@ Created on Wed Feb 22 17:14:45 2023
 @author: anton
 """
 import SLiCAP as sl
-sl.initProject("balanced")
+import sympy as sp
 
 cir = sl.makeCircuit('balancedAmp.cir')
 
@@ -44,6 +44,7 @@ sl.matrices2html(sl.doMatrix(cir, pardefs=None, convtype='cc'))
 sl.head2html("poles of the transformed circuit")
 result = sl.doPoles(cir, pardefs='circuit', convtype='all', numeric=True)
 sl.listPZ(result)
+sl.pz2html(result)
 # Poles common-mode transfer
 sl.head2html("poles and zeros of the CM transfer")
 result = sl.doPoles(cir, pardefs='circuit', convtype='cc', numeric=True)
@@ -56,5 +57,16 @@ sl.listPZ(result)
 sl.pz2html(result)
 # Differential-mode loop gain
 sl.head2html("Loop Gain of the DM transfer")
-result = sl.doLaplace(cir, transfer='loopgain', convtype='dd', pardefs=None)
-sl.eqn2html("L_G", result.laplace)
+result = sl.doLaplace(cir, transfer='loopgain', convtype='dd', pardefs="circuit", numeric=True)
+sl.eqn2html("L_G", sp.simplify(result.laplace))
+# Differential-mode loop gain
+sl.head2html("DM gain, no conversion")
+result = sl.doLaplace(cir, convtype=None, pardefs="circuit", numeric=True).laplace
+sl.eqn2html("A_d", result)
+sl.head2html("DM gain, conversion 'dd'")
+result = sl.doLaplace(cir, pardefs="circuit", numeric=True, convtype='dd').laplace
+sl.eqn2html("A_d", result)
+sl.head2html("CM gain, conversion 'cc'")
+result = sl.doLaplace(cir, pardefs="circuit", numeric=True, convtype='cc').laplace
+sl.eqn2html("A_c", result)
+

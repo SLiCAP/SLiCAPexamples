@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "/home/anton/DATA/SLiCAP/SLiCAP_github/SLiCAPexamples/Examples/dcMatchtingTracking/kicad/dcMatchingTracking/dcMatchingTracking.kicad_sch")
-    (date "2025-05-02T11:28:18+0200")
+    (date "2025-06-11T20:22:51+0200")
     (tool "Eeschema 9.0.1-9.0.1-0~ubuntu24.04.1")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block

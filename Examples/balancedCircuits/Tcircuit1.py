@@ -7,7 +7,7 @@ Created on Wed Feb 22 17:14:45 2023
 """
 import SLiCAP as sl
 import sympy as sp
-
+sl.initProject("noise")
 fileName = "Tcircuit1.cir"
 
 cir = sl.makeCircuit(fileName)
@@ -52,6 +52,7 @@ DMinoise = noiseResult.inoise
 sl.htmlPage("DM Noise analysis")
 
 noiseResult = sl.doNoise(cir, convtype = 'dd')
+
 sl.noise2html(noiseResult)
 
 if sp.N(noiseResult.onoise - DMonoise) == sp.N(0):
@@ -62,6 +63,7 @@ if sp.N(noiseResult.onoise - DMonoise) == sp.N(0):
     print('DMinoise OK!')
 else:
     print('DMinoise NOT OK!')
+
 sl.htmlPage("CM Noise analysis")
 noiseResult = sl.doNoise(cir, convtype='cc')
 sl.noise2html(noiseResult)

@@ -1,2 +1,2 @@
-.. literalinclude:: /../../cir/myPassiveNetwork.cir
+.. literalinclude:: ../../cir/myPassiveNetwork.cir
     :linenos:

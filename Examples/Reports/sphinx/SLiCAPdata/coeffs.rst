@@ -1,3 +1,5 @@
+**Gain factor:**:math:`\frac{R_{\ell}}{R_{\ell} + R_{\mathrm{s}}}`
+
 .. _tab-coeffs:
 .. csv-table:: Numerator and denominator coefficients of :math:`H(s)`, :math:`b_i` and :math:`a_i`, respectively
     :header: "Coeff", "Value"

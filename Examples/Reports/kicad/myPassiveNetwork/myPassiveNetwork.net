@@ -1,8 +1,8 @@
 (export (version "E")
   (design
     (source "/home/anton/DATA/SLiCAP/SLiCAP_github/SLiCAPexamples/Examples/Reports/kicad/myPassiveNetwork/myPassiveNetwork.kicad_sch")
-    (date "2025-05-23T11:46:04+0200")
-    (tool "Eeschema 9.0.1-9.0.1-0~ubuntu24.04.1")
+    (date "2025-09-05T13:15:28+0200")
+    (tool "Eeschema 9.0.3-9.0.3-0~ubuntu24.04.1")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block
         (title "myPassiveNetwork")

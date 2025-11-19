@@ -7,8 +7,9 @@ Created on Fri May  2 14:51:28 2025
 import SLiCAP as sl
 import re
 import os
+
 sl.initProject("RST formatter") # Initialize the SLiCAP project
-rst=sl.RSTformatter()
+rst = sl.RSTformatter()
 # Create a circuit object
 cir = sl.makeCircuit("kicad/myPassiveNetwork/myPassiveNetwork.kicad_sch")
 

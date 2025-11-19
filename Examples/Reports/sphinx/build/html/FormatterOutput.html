@@ -58,7 +58,7 @@
     <link rel="prev" title="SLiCAP output" href="SLiCAPoutput.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="English"/>
-    <meta name="docbuild:last-update" content="13/05/2025"/>
+    <meta name="docbuild:last-update" content="05/09/2025"/>
   </head>
   
   
@@ -351,8 +351,8 @@ document.write(`
 <span class="linenos"> 7</span><span class="kn">import</span> <span class="nn">SLiCAP</span> <span class="k">as</span> <span class="nn">sl</span>
 <span class="linenos"> 8</span><span class="kn">import</span> <span class="nn">re</span>
 <span class="linenos"> 9</span><span class="kn">import</span> <span class="nn">os</span>
-<span class="linenos">10</span><span class="n">sl</span><span class="o">.</span><span class="n">initProject</span><span class="p">(</span><span class="s2">&quot;RST formatter&quot;</span><span class="p">)</span> <span class="c1"># Initialize the SLiCAP project</span>
-<span class="linenos">11</span><span class="n">rst</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">formatter</span><span class="p">(</span><span class="s2">&quot;rst&quot;</span><span class="p">)</span>       <span class="c1"># Initialize a ReStructuredText formatter</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">sl</span><span class="o">.</span><span class="n">initProject</span><span class="p">(</span><span class="s2">&quot;RST formatter&quot;</span><span class="p">)</span> <span class="c1"># Initialize the SLiCAP project</span>
 </pre></div>
 </div>
 <p>In this script, variables for inline substitution are saved in the file <cite>substitutions.rst</cite> in the rst-snippet directory (see ref:<cite>Project file locations</cite>).</p>
@@ -363,7 +363,7 @@ document.write(`
 <p>In the following sections we will discuss the rst formatter methods.</p>
 <section id="coeffstransfer">
 <h2>coeffsTransfer()<a class="headerlink" href="#coeffstransfer" title="Link to this heading">#</a></h2>
-<p><strong>coeffsTransfer(Coeffs, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>coeffsTransfer(Coeffs, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
 <p>This method is used to display the numerator and denominator coefficients of a rational function in the form of a table.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">54</span><span class="c1"># Coefficients of the transfer:</span>
@@ -389,6 +389,7 @@ document.write(`
 </div>
 <p><strong>This renders as:</strong></p>
 <p><a class="reference internal" href="#tab-coeffs"><span class="std std-numref">Table 1</span></a> shows the numerator and denominator coefficients of the Laplace variable <span class="math notranslate nohighlight">\(s\)</span> of <span class="math notranslate nohighlight">\(H(s)\)</span>.</p>
+<p><strong>Gain factor:</strong><span class="math notranslate nohighlight">\(\frac{R_{\ell}}{R_{\ell} + R_{\mathrm{s}}}\)</span></p>
 <div class="pst-scrollable-table-container"><span id="tab-coeffs"></span><table class="table" id="id1">
 <caption><span class="caption-number">Table 1 </span><span class="caption-text">Numerator and denominator coefficients of <span class="math notranslate nohighlight">\(H(s)\)</span>, <span class="math notranslate nohighlight">\(b_i\)</span> and <span class="math notranslate nohighlight">\(a_i\)</span>, respectively</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <thead>
@@ -424,7 +425,7 @@ document.write(`
 </section>
 <section id="dcvarcontribs">
 <h2>dcvarContribs()<a class="headerlink" href="#dcvarcontribs" title="Link to this heading">#</a></h2>
-<p><strong>dcvarContribs(resultObject, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>dcvarContribs(resultObject, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
 <p>The individual contributions of independent DC error sources to the detector-referred and source-referred dc variance can be exported in the form of a table.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">72</span><span class="n">dcVarResults</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">doDCvar</span><span class="p">(</span><span class="n">cir</span><span class="p">)</span>
@@ -491,7 +492,7 @@ document.write(`
 </section>
 <section id="dicttable">
 <h2>dictTable()<a class="headerlink" href="#dicttable" title="Link to this heading">#</a></h2>
-<p><strong>dictTable(dct, head=None, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>dictTable(dct, head=None, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
 <p>This method displays the key-value pairs of a dictionary in the form of a table.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">48</span><span class="c1"># Use the dictTable method to display a dictionary as a table</span>
@@ -556,7 +557,7 @@ document.write(`
 </section>
 <section id="elementdata">
 <h2>elementData()<a class="headerlink" href="#elementdata" title="Link to this heading">#</a></h2>
-<p><strong>elementData(circuitObject, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>elementData(circuitObject, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
 <p>This method displays the expanded netlist of a circuit object in the form of a table.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">18</span><span class="n">rst</span><span class="o">.</span><span class="n">elementData</span><span class="p">(</span><span class="n">cir</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;tab-expanded&quot;</span><span class="p">,</span> 
@@ -750,7 +751,7 @@ document.write(`
 </section>
 <section id="eqn">
 <h2>eqn()<a class="headerlink" href="#eqn" title="Link to this heading">#</a></h2>
-<p><strong>eqn(LHS, RHS, units=&quot;&quot;, label=&quot;&quot;, multiline=False, position=0)</strong></p>
+<p><strong>eqn(LHS, RHS, units=&quot;&quot;, label=&quot;&quot;, multiline=False)</strong></p>
 <p>The formatter method <cite>eqn()</cite> creates an RST snippet of a displayed and numbered equation.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">39</span><span class="c1"># Save the transfer as a LaTeX displayed equation</span>
@@ -803,7 +804,7 @@ document.write(`
 </section>
 <section id="file">
 <h2>file()<a class="headerlink" href="#file" title="Link to this heading">#</a></h2>
-<p><strong>file(fileName, lineRange=None, firstNumber=None, position=0)</strong></p>
+<p><strong>file(fileName, lineRange=None, firstNumber=None)</strong></p>
 <p>The method <cite>file()</cite> generates an RST snippet for displaying a code file.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">91</span><span class="n">f</span> <span class="o">=</span> <span class="n">rst</span><span class="o">.</span><span class="n">file</span><span class="p">(</span><span class="s2">&quot;../../cir/myPassiveNetwork.cir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;f&quot;</span><span class="p">)</span>
@@ -832,7 +833,7 @@ document.write(`
 </section>
 <section id="matrixeqn">
 <h2>matrixEqn()<a class="headerlink" href="#matrixeqn" title="Link to this heading">#</a></h2>
-<p><strong>matrixEqn(Iv, M, Dv, label=&quot;&quot;, position=0)</strong></p>
+<p><strong>matrixEqn(Iv, M, Dv, label=&quot;&quot;)</strong></p>
 <p>The method <cite>matrixEqn()</cite> generates an RST snippet for a displayed matrix equation. <cite>Iv</cite>, <cite>M</cite>, and <cite>Dv</cite> must be Sympy matrices, representing the vector with independent variables, the transfer matrix, and the vector with dependent variables, respectively.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">27</span><span class="c1"># Obtain the MNA matrix equation of this network</span>
@@ -858,7 +859,7 @@ document.write(`
 </section>
 <section id="netlist">
 <h2>netlist()<a class="headerlink" href="#netlist" title="Link to this heading">#</a></h2>
-<p><strong>netlist(netlistFile, lineRange=None, firstNumber=None, position=0)</strong></p>
+<p><strong>netlist(netlistFile, lineRange=None, firstNumber=None)</strong></p>
 <p>This method creates a <cite>.. include::</cite> statement for a SLiCAP netlist file.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">16</span><span class="n">rst</span><span class="o">.</span><span class="n">netlist</span><span class="p">(</span><span class="s2">&quot;myPassiveNetwork.cir&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;netlist&quot;</span><span class="p">)</span>
@@ -886,7 +887,7 @@ document.write(`
 </section>
 <section id="noisecontribs">
 <h2>noiseContribs()<a class="headerlink" href="#noisecontribs" title="Link to this heading">#</a></h2>
-<p><strong>noiseContribs(resultObject, label=&quot;&quot;, caption=&quot;&quot;, position=0&quot;)</strong></p>
+<p><strong>noiseContribs(resultObject, label=&quot;&quot;, caption=&quot;&quot;&quot;)</strong></p>
 <p>The method <cite>noiseContribs()</cite> creates a table with noise sources and their contributions to the source-referred noise and the detector-referred noise.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">76</span><span class="n">noiseResults</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">doNoise</span><span class="p">(</span><span class="n">cir</span><span class="p">,</span> <span class="n">pardefs</span><span class="o">=</span><span class="s2">&quot;circuit&quot;</span><span class="p">)</span>
@@ -918,7 +919,7 @@ document.write(`
 <td><p><span class="math notranslate nohighlight">\(\mathrm{\frac{V^2}{Hz}}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>V1: Detector-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{6.4 \cdot 10^{23} \left(9.87 \cdot 10^{-15} f^{2} - 1\right)^{2}}{8653.0 f^{6} - 1.594 \cdot 10^{18} f^{4} + 8.846 \cdot 10^{31} f^{2} + 2.56 \cdot 10^{42}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{6.4 \cdot 10^{23} \left(1.0 \cdot 10^{-15} \pi^{2} f^{2} - 1\right)^{2}}{9 \pi^{6} f^{6} - 1.637 \cdot 10^{16} \pi^{4} f^{4} + 8.963 \cdot 10^{30} \pi^{2} f^{2} + 2.56 \cdot 10^{42}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{\frac{V^2}{Hz}}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>I_noise_R1: Source value</p></td>
@@ -930,7 +931,7 @@ document.write(`
 <td><p><span class="math notranslate nohighlight">\(\mathrm{\frac{V^2}{Hz}}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>I_noise_R1: Detector-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{3.976 \cdot 10^{23} \left(9.87 \cdot 10^{-15} f^{2} - 1\right)^{2}}{8653.0 f^{6} - 1.594 \cdot 10^{18} f^{4} + 8.846 \cdot 10^{31} f^{2} + 2.56 \cdot 10^{42}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{3.976 \cdot 10^{23} \left(1.0 \cdot 10^{-15} \pi^{2} f^{2} - 1\right)^{2}}{9 \pi^{6} f^{6} - 1.637 \cdot 10^{16} \pi^{4} f^{4} + 8.963 \cdot 10^{30} \pi^{2} f^{2} + 2.56 \cdot 10^{42}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{\frac{V^2}{Hz}}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>I_noise_R2: Source value</p></td>
@@ -938,11 +939,11 @@ document.write(`
 <td><p><span class="math notranslate nohighlight">\(\mathrm{\frac{A^2}{Hz}}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>I_noise_R2: Source-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{8.284 \cdot 10^{-49} \left(876.7 f^{4} - 1.619 \cdot 10^{17} f^{2} + 9.0 \cdot 10^{30}\right)}{\left(9.87 \cdot 10^{-15} f^{2} - 1\right)^{2}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{8.284 \cdot 10^{-49} \left(9 \pi^{4} f^{4} - 1.64 \cdot 10^{16} \pi^{2} f^{2} + 9.0 \cdot 10^{30}\right)}{\left(1.0 \cdot 10^{-15} \pi^{2} f^{2} - 1\right)^{2}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{\frac{V^2}{Hz}}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p>I_noise_R2: Detector-referred</p></td>
-<td><p><span class="math notranslate nohighlight">\(\frac{1.325 \cdot 10^{-7} \left(876.7 f^{4} - 1.619 \cdot 10^{17} f^{2} + 9.0 \cdot 10^{30}\right)}{8653.0 f^{6} - 1.594 \cdot 10^{18} f^{4} + 8.846 \cdot 10^{31} f^{2} + 2.56 \cdot 10^{42}}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\frac{1.325 \cdot 10^{-7} \left(9 \pi^{4} f^{4} - 1.64 \cdot 10^{16} \pi^{2} f^{2} + 9.0 \cdot 10^{30}\right)}{9 \pi^{6} f^{6} - 1.637 \cdot 10^{16} \pi^{4} f^{4} + 8.963 \cdot 10^{30} \pi^{2} f^{2} + 2.56 \cdot 10^{42}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mathrm{\frac{V^2}{Hz}}\)</span></p></td>
 </tr>
 </tbody>
@@ -951,7 +952,7 @@ document.write(`
 </section>
 <section id="params">
 <h2>params()<a class="headerlink" href="#params" title="Link to this heading">#</a></h2>
-<p><strong>params(circuitObject, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>params(circuitObject, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
 <p>This method creates a single-column table with names of undefined parameters.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">24</span><span class="n">rst</span><span class="o">.</span><span class="n">params</span><span class="p">(</span><span class="n">cir</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;tab-params&quot;</span><span class="p">,</span> 
@@ -967,7 +968,7 @@ document.write(`
 </section>
 <section id="pardefs">
 <h2>parDefs()<a class="headerlink" href="#pardefs" title="Link to this heading">#</a></h2>
-<p><strong>parDefs(circuitObject, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>parDefs(circuitObject, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
 <p>This method creates a single-column table with circuit parameter definitions.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">21</span><span class="n">rst</span><span class="o">.</span><span class="n">parDefs</span><span class="p">(</span><span class="n">cir</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;tab-pardefs&quot;</span><span class="p">,</span> 
@@ -1041,7 +1042,7 @@ document.write(`
 </section>
 <section id="pz">
 <h2>pz()<a class="headerlink" href="#pz" title="Link to this heading">#</a></h2>
-<p><strong>pz(resultObject, label=&quot;&quot;, append2caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>pz(resultObject, label=&quot;&quot;, append2caption=&quot;&quot;)</strong></p>
 <p>This method creates RST table snippets for results of pole-zero analysis results.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">76</span><span class="n">noiseResults</span> <span class="o">=</span> <span class="n">sl</span><span class="o">.</span><span class="n">doNoise</span><span class="p">(</span><span class="n">cir</span><span class="p">,</span> <span class="n">pardefs</span><span class="o">=</span><span class="s2">&quot;circuit&quot;</span><span class="p">)</span>
@@ -1068,19 +1069,19 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{1}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.701 \cdot 10^{5}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.701 \cdot 10^{5}\)</span></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{2}}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.37\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{3}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
@@ -1131,13 +1132,13 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{1}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\tilde{\infty}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{2}}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
@@ -1154,6 +1155,7 @@ document.write(`
 </div>
 <p><strong>This renders as:</strong></p>
 <p>The poles and zeros are listed in <a class="reference internal" href="#tab-pz"><span class="std std-numref">Table 10</span></a>.</p>
+<p>DC value of gain: <span class="math notranslate nohighlight">\(0.25\)</span></p>
 <div class="pst-scrollable-table-container"><span id="tab-pz"></span><table class="table" id="id10">
 <caption><span class="caption-number">Table 10 </span><span class="caption-text">Poles and zeros of the transfer</span><a class="headerlink" href="#id10" title="Link to this table">#</a></caption>
 <thead>
@@ -1165,31 +1167,31 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{1}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.701 \cdot 10^{5}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.701 \cdot 10^{5}\)</span></p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{2}}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.37\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{3}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(p_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-2.122 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-9.83 \cdot 10^{6}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.006 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2.37\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{1}}\)</span></p></td>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\tilde{\infty}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{2}}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(z_{\mathrm{0}}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-1.007 \cdot 10^{7}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1.007 \cdot 10^{7}\)</span></p></td>
@@ -1198,12 +1200,11 @@ document.write(`
 </tbody>
 </table>
 </div>
-<p>The DC value of the transfer equals: <span class="math notranslate nohighlight">\(0.25\)</span></p>
 </section>
 <section id="specs">
 <h2>specs()<a class="headerlink" href="#specs" title="Link to this heading">#</a></h2>
-<p><strong>specs(specs, specType, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
-<p>This method exprots an RST snippet for a specification tabel.</p>
+<p><strong>specs(specs, specType, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
+<p>This method exports an RST snippet for a specification tabel.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 93</span><span class="n">specs</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="linenos"> 94</span><span class="n">specs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sl</span><span class="o">.</span><span class="n">specItem</span><span class="p">(</span><span class="s2">&quot;f_min&quot;</span><span class="p">,</span> <span class="s2">&quot;Lower limit noise bandwidth&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="s2">&quot;Hz&quot;</span><span class="p">,</span> <span class="n">specType</span><span class="o">=</span><span class="s2">&quot;performance&quot;</span><span class="p">))</span>
@@ -1276,7 +1277,7 @@ document.write(`
 </section>
 <section id="steparray">
 <h2>stepArray()<a class="headerlink" href="#steparray" title="Link to this heading">#</a></h2>
-<p><strong>stepArray(stepVars, stepArray, label=&quot;&quot;, caption=&quot;&quot;, position=0)</strong></p>
+<p><strong>stepArray(stepVars, stepArray, label=&quot;&quot;, caption=&quot;&quot;)</strong></p>
 <p>This method exports an RST table snippet with step-data for array-type stepping.</p>
 <p><strong>SLiCAP code:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">103</span><span class="n">step_dict</span> <span class="o">=</span> <span class="p">{}</span>
@@ -1413,7 +1414,7 @@ By Anton Montagne
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on 13/05/2025.
+  Last updated on 05/09/2025.
   <br/>
 </p>
   </div>

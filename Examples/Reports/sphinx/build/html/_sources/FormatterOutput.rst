@@ -25,7 +25,7 @@ In the following sections we will discuss the rst formatter methods.
 coeffsTransfer()
 ================
 
-**coeffsTransfer(Coeffs, label="", caption="", position=0)**
+**coeffsTransfer(Coeffs, label="", caption="")**
 
 This method is used to display the numerator and denominator coefficients of a rational function in the form of a table.
 
@@ -54,7 +54,7 @@ Let :math:`H(s)=` |H2|
 dcvarContribs()
 ===============
 
-**dcvarContribs(resultObject, label="", caption="", position=0)**
+**dcvarContribs(resultObject, label="", caption="")**
 
 The individual contributions of independent DC error sources to the detector-referred and source-referred dc variance can be exported in the form of a table.
 
@@ -81,7 +81,7 @@ The result is shown in :numref:`tab-dcvar`
 dictTable()
 ===========
 
-**dictTable(dct, head=None, label="", caption="", position=0)**
+**dictTable(dct, head=None, label="", caption="")**
 
 This method displays the key-value pairs of a dictionary in the form of a table.
 
@@ -108,7 +108,7 @@ The result is shown in :numref:`tab-mydct`.
 elementData()
 =============
 
-**elementData(circuitObject, label="", caption="", position=0)**
+**elementData(circuitObject, label="", caption="")**
 
 This method displays the expanded netlist of a circuit object in the form of a table.
 
@@ -135,7 +135,7 @@ This method displays the expanded netlist of a circuit object in the form of a t
 eqn()
 =====
 
-**eqn(LHS, RHS, units="", label="", multiline=False, position=0)**
+**eqn(LHS, RHS, units="", label="", multiline=False)**
 
 The formatter method `eqn()` creates an RST snippet of a displayed and numbered equation.
 
@@ -214,7 +214,7 @@ The transfer can be written as: |H2|
 file()
 ======
 
-**file(fileName, lineRange=None, firstNumber=None, position=0)**
+**file(fileName, lineRange=None, firstNumber=None)**
 
 The method `file()` generates an RST snippet for displaying a code file.
 
@@ -241,7 +241,7 @@ Please notice the file path relative to the RST document.
 matrixEqn()
 ===========
 
-**matrixEqn(Iv, M, Dv, label="", position=0)**
+**matrixEqn(Iv, M, Dv, label="")**
 
 The method `matrixEqn()` generates an RST snippet for a displayed matrix equation. `Iv`, `M`, and `Dv` must be Sympy matrices, representing the vector with independent variables, the transfer matrix, and the vector with dependent variables, respectively.
 
@@ -268,7 +268,7 @@ The matrix equation of the network is given in :eq:`eq-matrices`.
 netlist()
 =========
 
-**netlist(netlistFile, lineRange=None, firstNumber=None, position=0)**
+**netlist(netlistFile, lineRange=None, firstNumber=None)**
 
 This method creates a `.. include::` statement for a SLiCAP netlist file.
 
@@ -293,7 +293,7 @@ This method creates a `.. include::` statement for a SLiCAP netlist file.
 noiseContribs()
 ===============
 
-**noiseContribs(resultObject, label="", caption="", position=0")**
+**noiseContribs(resultObject, label="", caption=""")**
 
 The method `noiseContribs()` creates a table with noise sources and their contributions to the source-referred noise and the detector-referred noise.
 
@@ -320,7 +320,7 @@ The noise contributions are listed in :numref:`tab-noise`.
 params()
 ========
 
-**params(circuitObject, label="", caption="", position=0)**
+**params(circuitObject, label="", caption="")**
 
 This method creates a single-column table with names of undefined parameters.
 
@@ -347,7 +347,7 @@ Undefined parameters are given in :numref:`tab-params`.
 parDefs()
 =========
 
-**parDefs(circuitObject, label="", caption="", position=0)**
+**parDefs(circuitObject, label="", caption="")**
 
 This method creates a single-column table with circuit parameter definitions.
 
@@ -374,7 +374,7 @@ Parameter definitions are given in numref:`tab-pardefs`.
 pz()
 ====
 
-**pz(resultObject, label="", append2caption="", position=0)**
+**pz(resultObject, label="", append2caption="")**
 
 This method creates RST table snippets for results of pole-zero analysis results.
 
@@ -437,14 +437,14 @@ The poles and zeros are listed in :numref:`tab-pz`.
 
 .. include:: ../SLiCAPdata/pz.rst
 
-The DC value of the transfer equals: |dcValue|
+
 
 specs()
 =======
 
-**specs(specs, specType, label="", caption="", position=0)**
+**specs(specs, specType, label="", caption="")**
 
-This method exprots an RST snippet for a specification tabel.
+This method exports an RST snippet for a specification tabel.
 
 **SLiCAP code:**
 
@@ -482,7 +482,7 @@ The design specifications are listed in :numref:`tab-design`.
 stepArray()
 ===========
 
-**stepArray(stepVars, stepArray, label="", caption="", position=0)**
+**stepArray(stepVars, stepArray, label="", caption="")**
 
 This method exports an RST table snippet with step-data for array-type stepping.
 

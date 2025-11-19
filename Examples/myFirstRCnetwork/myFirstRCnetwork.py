@@ -9,11 +9,7 @@ This file requires SLiCAP_V3
 """
 
 import SLiCAP as sl
-
 import sympy as sp
-from time import time
-
-t1=time()
 
 # Define all the paths, create the HTML main index page, reset the parser, and
 # compile the SLiCAP libraries.
@@ -21,10 +17,9 @@ t1=time()
 prj = sl.initProject('My first RC network') 
 
 # Create a circuit object from a schematic file or a SLiCAP netlist:
-    
 fileName = "myFirstRCnetwork"
 
-# KiCAD version 8.0
+# KiCAD version 8.0 + 
 fileName = 'kicad/' + fileName + '/' + fileName + '.kicad_sch'
 
 # LTspice
@@ -36,7 +31,7 @@ fileName = 'kicad/' + fileName + '/' + fileName + '.kicad_sch'
 # Use existing netlist that resides in the ini.cir_path directory
 #fileName = fileName + '.cir'
 
-cir = sl.makeCircuit(fileName, update=True, imgWidth=400)
+cir = sl.makeCircuit(fileName, imgWidth=400)
 
 # Let us define an instruction to display the symbolic MNA matrix equation.
 MNA = sl.doMatrix(cir)
@@ -171,5 +166,3 @@ Rvalue = sp.N(RR1.subs([(tau_s, 100e-9), (n, 10), (C, 1e-11)]), sl.ini.disp)
 sl.eqn2html(R, Rvalue, label = 'Rvalue', labelText = 'Numeric value of $R$')
 #
 sl.links2html()
-t2 = time()
-print("Total time: %3.1fs"%(t2-t1))

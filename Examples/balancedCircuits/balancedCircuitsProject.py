@@ -12,3 +12,4 @@ prj = sl.initProject("Balanced circuits")
 from Tcircuit1 import *
 from balancedAmp import *
 from balancedMOSAmp import *
+from balancedNoise import *
